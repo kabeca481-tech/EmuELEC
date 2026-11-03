@@ -14,6 +14,9 @@ This project is for Rockchip SoC devices
 * [Popcorn Hour Transformer](devices/RK3328)
 * [Firefly ROC-RK3328-CC](devices/RK3328)
 
+**RK3228/RK3228A**
+* [R329Q TV box](devices/RK322X)
+
 **RK3399**
 * [96rocks ROCK960](devices/RK3399)
 * [Khadas Edge](devices/RK3399)

@@ -1,0 +1,25 @@
+################################################################################
+# setup device defaults
+################################################################################
+
+  # RK3228A is a 32-bit Cortex-A7 SoC.
+    case $TARGET_ARCH in
+      arm)
+        TARGET_KERNEL_ARCH="arm"
+        TARGET_PATCH_ARCH="arm"
+        TARGET_FLOAT="hard"
+        TARGET_CPU="cortex-a7"
+        TARGET_FPU="neon-vfpv4"
+        TARGET_FEATURES="32bit"
+        ;;
+    esac
+
+  # Linux 4.4 vendor kernel and board tree for the R329Q TV box.
+    LINUX="${LINUX:-rockchip-4.4}"
+    KERNEL_TARGET="zImage"
+    KERNEL_MAKE_EXTRACMD="rk3229-r329q.dtb"
+
+  # Keep the image focused on the RK3228A board; use the Rockchip bootloader.
+    BOOTLOADER="u-boot"
+    MALI_FAMILY="400"
+    EXTRA_CMDLINE="console=ttyS2,115200n8 console=tty0"

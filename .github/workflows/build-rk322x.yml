@@ -1,0 +1,51 @@
+name: Build EmuELEC for RK3228A R329Q
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - codex/rk322x-port
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 360
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential gcc make git unzip wget xz-utils curl \
+            libsdl2-dev libsdl2-mixer-dev libfreeimage-dev libfreetype6-dev \
+            libcurl4-openssl-dev rapidjson-dev libasound2-dev libgl1-mesa-dev \
+            libboost-all-dev cmake fonts-droid-fallback libvlc-dev libvlccore-dev \
+            vlc-bin texinfo golang libssl-dev patchelf xmlstarlet \
+            bc bison flex device-tree-compiler rsync p7zip-full \
+            libncurses5-dev libncursesw5-dev python3-dev python-is-python3
+
+      - name: Build RK3228A R329Q image
+        run: |
+          PROJECT=Rockchip \
+          DEVICE=RK322X \
+          ARCH=arm \
+          DISTRO=EmuELEC \
+          UBOOT_SYSTEM=rk322x \
+          make image
+
+      - name: Upload image artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: EmuELEC-RK3228A-R329Q
+          path: |
+            target/*.img
+            target/*.img.gz
+            target/*.tar
+            target/*.tar.gz
+          if-no-files-found: error
+          retention-days: 14

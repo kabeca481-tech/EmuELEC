@@ -46,6 +46,9 @@ devices = {
       'rock64' : { 'dtb' : 'rk3328-rock64.dtb', 'config' : 'evb-rk3328_defconfig' },
       'rockbox' : { 'dtb' : 'rk3328-rockbox.dtb', 'config' : 'evb-rk3328_defconfig' },
     },
+    'RK322X' : {
+      'rk322x' : { 'dtb' : 'rk3229-r329q.dtb', 'config' : 'rk322x_defconfig' },
+    },
     'RK3399' : {
       'khadas-edge' : { 'dtb' : 'rk3399-khadas-edge.dtb', 'config' : 'evb-rk3399_config' },
       'rock960' : { 'dtb' : 'rk3399-rock960.dtb', 'config' : 'evb-rk3399_config' },
