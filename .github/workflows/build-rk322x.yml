@@ -27,7 +27,8 @@ jobs:
             libboost-all-dev cmake fonts-droid-fallback libvlc-dev libvlccore-dev \
             vlc-bin texinfo golang libssl-dev patchelf xmlstarlet \
             bc bison flex device-tree-compiler rsync p7zip-full \
-            libncurses5-dev libncursesw5-dev python3-dev python-is-python3
+            libncurses5-dev libncursesw5-dev python3-dev python-is-python3 \
+            patchutils gperf lzop xfonts-utils xsltproc libxml-parser-perl
 
       - name: Build RK3228A R329Q image
         run: |
