@@ -3,11 +3,11 @@
 # Copyright (C) 2018-present Team LibreELEC (https://libreelec.tv)
 
 PKG_NAME="make"
-PKG_VERSION="4.2.1"
-PKG_SHA256="d6e262bf3601b42d2b1e4ef8310029e1dcf20083c5446b4b7aa67081fdffc589"
+PKG_VERSION="4.4.1"
+PKG_SHA256="dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3"
 PKG_LICENSE="GPLv3"
 PKG_SITE="https://www.gnu.org/software/make/"
-PKG_URL="http://ftpmirror.gnu.org/make/$PKG_NAME-$PKG_VERSION.tar.bz2"
+PKG_URL="https://ftp.gnu.org/gnu/make/$PKG_NAME-$PKG_VERSION.tar.gz"
 PKG_DEPENDS_HOST=""
 PKG_LONGDESC="Utility to maintain groups of programs."
 
