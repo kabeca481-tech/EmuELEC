@@ -1,16 +1,16 @@
 From: GNU binutils upstream
-Subject: gold: include <string> in descriptors.cc
+Subject: gold: include <string> in errors.h
 
-Fixes compilation with modern GCC where std::string is no longer included
-transitively by other standard headers.
+errors.h declares an API using std::string and must include its definition
+directly, instead of relying on unrelated translation units to include it.
 
---- a/gold/descriptors.cc
-+++ b/gold/descriptors.cc
-@@ -26,6 +26,7 @@
- #include <cstdio>
- #include <cstring>
- #include <fcntl.h>
-+#include <string>
- #include <unistd.h>
+--- a/gold/errors.h
++++ b/gold/errors.h
+@@ -24,6 +24,7 @@
+ #ifndef GOLD_ERRORS_H
+ #define GOLD_ERRORS_H
  
- #include "debug.h"
++#include <string>
+ #include "gold-threads.h"
+ 
+ namespace gold
